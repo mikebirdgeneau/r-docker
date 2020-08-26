@@ -7,7 +7,7 @@ RUN mkdir -p /usr/share/man/man1
 RUN apt-get update && apt-get upgrade -y && apt-get install -yq csh bash g++ gcc git cron \
  postfix sudo build-essential libssl-dev ca-certificates xvfb \
  default-jre-headless libfreetype6-dev libcurl4-openssl-dev curl wget \
- pandoc libgeos-dev \
+ pandoc libgeos-dev xz \
  r-base-core r-base-dev r-recommended r-cran-curl
 
 # Install Commonly used R packages:
