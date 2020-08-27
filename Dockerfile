@@ -11,7 +11,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -yq csh bash g++ gcc
  r-base-core r-base-dev r-recommended r-cran-curl
 
 # Install Commonly used R packages:
-RUN echo "install.packages(c('data.table','ggplot2','stringr','lubridate','ProjectTemplate','curl','RCurl','h2o','gridExtra','ggrepel','readxl','geosphere','sp','cowplot','showtext','extrafont','knitr','rmarkdown','config','bit64','rgeos','rgdal','rworldmap','maptools','rworldxtra','nord'),repos='https://cran.rstudio.com')" | /usr/bin/R --no-save
+RUN echo "install.packages(c('data.table','ggplot2','stringr','lubridate','ProjectTemplate','curl','RCurl','h2o','gridExtra','ggrepel','readxl','geosphere','sp','cowplot','showtext','extrafont','knitr','rmarkdown','config','bit64','rgeos','rgdal','rgeojson','rgeojsonio','rworldmap','maptools','rworldxtra','nord'),repos='https://cran.rstudio.com')" | /usr/bin/R --no-save
 
 # Install tinytex
 RUN echo "install.packages(c('tinytex'),repos='https://cran.rstudio.com'); tinytex::install_tinytex()" | /usr/bin/R --no-save
