@@ -7,11 +7,11 @@ RUN mkdir -p /usr/share/man/man1
 RUN apt-get update && apt-get upgrade -y && apt-get install -yq csh bash g++ gcc git cron \
  postfix sudo build-essential libssl-dev ca-certificates xvfb \
  default-jre-headless libfreetype6-dev libcurl4-openssl-dev curl wget \
- pandoc libgeos-dev xz \
+ pandoc libgeos-dev libgdal-dev libproj-dev xz \
  r-base-core r-base-dev r-recommended r-cran-curl
 
 # Install Commonly used R packages:
-RUN echo "install.packages(c('data.table','ggplot2','stringr','lubridate','ProjectTemplate','curl','RCurl','h2o','gridExtra','ggrepel','readxl','geosphere','sp','cowplot','showtext','extrafont','knitr','rmarkdown','config','bit64','rgeos','rworldmap','maptools','rworldxtra','nord'),repos='https://cran.rstudio.com')" | /usr/bin/R --no-save
+RUN echo "install.packages(c('data.table','ggplot2','stringr','lubridate','ProjectTemplate','curl','RCurl','h2o','gridExtra','ggrepel','readxl','geosphere','sp','cowplot','showtext','extrafont','knitr','rmarkdown','config','bit64','rgeos','rgdal','rworldmap','maptools','rworldxtra','nord'),repos='https://cran.rstudio.com')" | /usr/bin/R --no-save
 
 # Install tinytex
 RUN echo "install.packages(c('tinytex'),repos='https://cran.rstudio.com'); tinytex::install_tinytex()" | /usr/bin/R --no-save
